@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=her, initial-scale=1.0">
+    <title>Exemplo formularios HTML</title>
+</head>
+
+<body>
+    <header>
+        <h3>Formularios e Inputs</h3>
+    </header>
+    <main>
+        <form id="registerForm" method="post" action="../exemplo-forum/">
+            <label for="nome"> Nome completo: </label>
+            <input type="text" id="nome" name="nome" required />
+            <br>
+            <label for="email">Endereço do email</label>
+            <input type="email" id="email" name="email">
+            <br>
+            <label for="senha">Informe a senha</label>
+            <input type="password" id="senha" name="senha" required minlength="8" title="Senha deve conter no minimo 8 caracteres">
+            <br>
+            <label for="mensagem">Informe sua mensagem</label>
+            <br>
+            <textarea name="mensagem" id="mensagem" cols="30" rows="4"></textarea>
+            <br>
+            <label for="Evento">Selecione o evento escolido</label>
+            <select id="evento" name="evento">
+                <option value="Rock">Show de Rock</option>
+                <option value="Modao">Show de Sertanejo</option>
+                <option value="Teatro">Teatro: Comedia</option>
+            </select>
+            <br>
+            <label for="termos">
+                <input type="checkbox" name="termos" id="termos" required>Aceito os termos de uso
+            </label>
+            <br>
+            <label><input type="radio" name="pagamento" value="pix">pix</label>
+            <br>
+            <label><input type="radio" name="pagamento" value="cartao">cartao</label>
+            <br>
+            <input type="submit" value="Cadastrar">
+            <button type="button" onclick="">Cancel</button>
+        </form>
+
+    </main>
+
+    <footer>
+        <p>Desemvolvido por Gabriel</p>
+    </footer>
+
+    <script>
+        document.getElementById("registerForm").addEventListener('submit', function (event)
+        {
+         event.preventDefault(); // inpede o comportamento padrão de envio do formulario (recarregamento)
+         const nome = document.getElementById('nome').value;
+         alert('Olá,' + nome + 'cadastro enviado com sucesso')
+
+        })
+    </script>
+</body>
+
+</html>
